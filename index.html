@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NEON ROYALE - Browser Battle Royale</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+</head>
+<body>
+    <div id="game-container">
+        <canvas id="game-canvas"></canvas>
+        
+        <!-- HUD -->
+        <div id="hud" class="hidden">
+            <div class="hud-top">
+                <div class="minimap-container">
+                    <canvas id="minimap"></canvas>
+                    <div class="alive-count">Alive: <span id="alive-count">50</span></div>
+                </div>
+                <div class="safe-zone-timer">
+                    <div class="storm-timer">Storm: <span id="storm-timer">60</span>s</div>
+                </div>
+            </div>
+            
+            <div class="hud-center">
+                <div class="crosshair"></div>
+                <div class="hit-marker" id="hit-marker"></div>
+            </div>
+            
+            <div class="hud-bottom">
+                <div class="health-armor">
+                    <div class="bar health-bar">
+                        <div class="fill" id="health-fill" style="width: 100%"></div>
+                        <span class="text">HP: <span id="health-text">100</span></span>
+                    </div>
+                    <div class="bar armor-bar">
+                        <div class="fill" id="armor-fill" style="width: 0%"></div>
+                        <span class="text">Armor: <span id="armor-text">0</span></span>
+                    </div>
+                </div>
+                
+                <div class="weapon-info">
+                    <div class="weapon-name" id="weapon-name">AR-15</div>
+                    <div class="ammo-count">
+                        <span id="ammo-current">30</span> / <span id="ammo-total">90</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Menus -->
+        <div id="main-menu" class="menu">
+            <h1>NEON ROYALE</h1>
+            <button id="start-btn" class="btn-primary">START MATCH</button>
+            <div class="controls-info">
+                <p>WASD - Move | Mouse - Aim | Click - Shoot</p>
+                <p>Space - Jump | Shift - Sprint | R - Reload</p>
+            </div>
+        </div>
+        
+        <div id="game-over" class="menu hidden">
+            <h1 id="game-over-title">MATCH ENDED</h1>
+            <p id="game-over-stats"></p>
+            <button id="restart-btn" class="btn-primary">PLAY AGAIN</button>
+        </div>
+        
+        <div id="kill-feed" class="kill-feed"></div>
+    </div>
+    
+    <!-- Load modules -->
+    <script type="module" src="main.js"></script>
+</body>
+</html>
